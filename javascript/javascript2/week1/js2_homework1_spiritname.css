@@ -1,0 +1,8 @@
+#spiritNameDisplaydiv {
+    height: 50px;  
+    font-family:cooper black;
+    text-align: center;
+    background-color:lightgrey;
+    margin:15px;
+    border: 3px Solid brown
+}
