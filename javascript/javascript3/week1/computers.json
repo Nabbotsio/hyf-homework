@@ -1,0 +1,30 @@
+[{"id": 1,
+  "brand":"HP" ,
+  "os": "windows xp" ,
+  "ram": "2GB",
+  "hdd": "100GB"},
+
+{"id": 2,
+ "brand":"Lenovo" ,
+ "os": "windows 10" ,
+ "ram": "4GB",
+ "hdd": "500GB"},
+
+{"id": 3,
+ "brand":"Compaq" ,
+ "os": "windows 7" ,
+ "ram": "4GB",
+ "hdd": "300GB"},
+
+{"id": 4,
+ "brand":"Acer" ,
+ "os": "windows server12" ,
+ "ram": "6GB",
+ "hdd": "500GB"},
+
+ {"id": 5,
+    "brand": "DELL" ,
+    "os": "windows 8" ,
+    "ram": "3GB",
+    "hdd": "200GB"}
+]
