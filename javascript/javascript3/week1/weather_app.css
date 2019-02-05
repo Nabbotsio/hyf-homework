@@ -1,8 +1,13 @@
 .displayWaetherInfo {
-    height: 100px;
+    height: 150px;
     background-color: lightblue;
 }
 
 body {
     text-align: center;
+}
+
+.get_weather{
+    padding: 5px;
+    margin: 10px;
 }
