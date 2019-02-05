@@ -7,7 +7,7 @@ body {
     text-align: center;
 }
 
-.get_weather{
+.get_weather, .current_location_weather{
     padding: 5px;
     margin: 10px;
 }
