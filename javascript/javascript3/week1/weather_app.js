@@ -24,7 +24,7 @@ function printWeatherDetails (weather){
     cityNameDiv.innerHTML ="Weather Information for " + weather.name;
 
     let tempDiv = document.querySelector(".temperature")
-    tempDiv.innerHTML = "Temperature: "+ Math.round(weather.main.temp ) + "°" + "C";
+    tempDiv.innerHTML = "Temperature: "+ Math.round(weather.main.temp ) + "°C ";
 
     let humidityDiv=document.querySelector(".humidity");
     humidityDiv.innerHTML= "Humidity: "+ weather.main.humidity + "%";

@@ -1,6 +1,7 @@
 .displayWaetherInfo {
-    height: 150px;
-    background-color: lightblue;
+    height: 180px;
+    background-color: lightgray;
+    padding: 10px;
 }
 
 body {
@@ -10,4 +11,10 @@ body {
 .get_weather, .current_location_weather{
     padding: 5px;
     margin: 10px;
+}
+
+html{
+    background:url(weather.jpg) no-repeat center ;
+    
+    background-size: cover;
 }
