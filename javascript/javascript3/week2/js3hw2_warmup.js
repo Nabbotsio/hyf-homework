@@ -1,4 +1,4 @@
-/*
+
 // funtion that returns a promise
 function notThisFunctionName (millisecondsToResolve){
     return new Promise ((resolve)=>{
@@ -83,7 +83,7 @@ setTimeoutPromise(3000)
         console.log('Called after 3 seconds');
     });
 
-*/
+
 //Current Location
 function getCurrentLocation() {
     return new Promise ((resolve,reject)=>{
