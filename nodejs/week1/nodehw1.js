@@ -16,6 +16,17 @@ class StudentsBook{
         })
     }
 
+    getListByClass(classId){
+       return this.students.filter((student)=>{
+            if (student.classId === classId);
+            const name = student.name;
+            const cId = student.classId;
+            return {name, cId}
+
+
+        })
+    }
+
 }
 
 
