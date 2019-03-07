@@ -8,7 +8,10 @@ class StudentsBook{
         this.students.push(student)
     }
 
-    getList(){ // gives the list of all students
+/***************************************************************
+ Step 1: method that can return list is all HYF students
+************************************************************** */
+    getList(){ 
        return this.students.map((student)=>{
             const Name = student.name;
             const Email = student.email;
@@ -16,15 +19,64 @@ class StudentsBook{
         })
     }
 
-    getListByClass(classId){
-       return this.students.filter((student)=>{
-            if (student.classId === classId);
-            const name = student.name;
-            const cId = student.classId;
-            return {name, cId}
-
-
+/********************************************************************************
+ Step 2: method that can return a filtered list of students by class name
+****************************************************************************** */
+    getListByClass(classId){  
+       let classList = this.students.filter((student)=>{
+            return student.classId === classId;    
         })
+            let listByClass = classList.map((student)=>{
+                const name = student.name;
+                const classId = student.classId;
+                return {name, classId}
+            })
+            return listByClass;
+    }
+
+/*************************************************************************
+ Step 3: method that can return one student’s detailed information
+************************************************************************ */
+    getStudentDetailByName(nameToFind){
+      let isNameFound=false
+      console.log();
+      console.log(`${nameToFind}'s student Infomation`);
+
+      let studentInfo = this.students.filter((student)=>{
+        if(student.name.includes(nameToFind)){
+          isNameFound=true;
+          return student;
+        }
+      })
+
+        if(isNameFound===true){
+          return studentInfo;
+        }
+        else{
+          return "match  not found";
+        }
+    }
+
+/*****************************************************************************
+ Step 4: method that can add a new student to HYF 
+ which receive the below person object as an input and store to existing list
+*************************************************************************** */    
+    addNewStudent(studentInfo){
+      this.students.push(studentInfo);
+    }
+
+
+/*****************************************************************
+ Step 5: method that can edit existing student information
+*************************************************************** */
+    editStudentInfo(studentInfo){
+      return this.students.forEach((student) => {
+        if(student.name===studentInfo.name){
+          student.classId=studentInfo.classId;
+          student.email=studentInfo.email;
+          student.telephone=studentInfo.telephone;
+        }
+      });
     }
 
 }
@@ -63,145 +115,50 @@ console.log(hyf_students);
 
 
 
-/***************************************************************
- Step 1: Write a method that can return list is all HYF students
-************************************************************** */
+
+console.log();
+console.log("Students List");
 console.log(hyf_students.getList());
 
-/** 
-Sample Result:
-[
-  {
-    name: 'Natalia'
-    email: 'natalia@mail.com'
-  },
-  {
-    name: 'Omit'
-    email: 'omit@mail.com'
-  },
-  {
-    name: 'Yana'
-    email: 'yana@mail.com'
-  },
-  {
-    name: 'Hema Gunti'
-    email: 'hema@mail.com'
-  }
-]
-*/
-
-/********************************************************************************
- Step 2: Write a method that can return a filtered list of students by class name
-****************************************************************************** */
-hyf_students.getListByClass('08');
-
-/** 
-Sample Result:
-[
-  {
-    name: 'Natalia'
-    classId: '08'
-  },
-  {
-    name: 'Keerthika devi'
-    classId: '08'
-  },
-  {
-    name: 'Kseniia'
-    classId: '08'
-  },
-  
-]
-*/
 
 
-/*************************************************************************
- Step 3: Write a method that can return one student’s detailed information
-************************************************************************ */
-hyf_students.getStudentDetailByName('Sheila');
+console.log();
+console.log("List by Class");
+console.log(hyf_students.getListByClass("08"));
 
-/** 
-Sample Result:
- {
-       'name': 'Sheila',
-       'classId': '08',
-       'email': 'sheilaqasemi @mail.com',
-       'telephone': '3333333'
-}
-*/
 
-// No result found
-hyf_students.getStudentDetailByName('zzzzz'); // if the student name not exits in the list should reult the below message
+console.log(hyf_students.getStudentDetailByName('Sheila'));
 
-/** 
-Sample Result: 
-    
-    No match found
 
-*/
+console.log(hyf_students.getStudentDetailByName('zzzzz')); // this returns No result found
 
-/*****************************************************************************
- Step 4: Write a method that can add a new student to HYF 
- which receive the below person object as an input and store to existing list
-*************************************************************************** */
+
+
 const newStudent1 =  {
     'name': 'Afshin Heidari',
     'class': '08',
     'email': 'afshin@mail.com',
     'telephone': '11110000'
 };
-hyf_students.addNewStudent(newStudent1); // this method should add the new student in the list if not exits
+hyf_students.addNewStudent(newStudent1); // this method add the new student in the list if not exits
+
+console.log();
+console.log("Students List");
+console.log(hyf_students.getList()); // Verify the student added to the list
 
 
-hyf_students.getList(); // Verify the student added to the list
-
-/** 
-Sample Result:
-[
-    {
-    name: 'Afshin Heidari'
-    email: 'natalia@mail.com'
-  },
-  {
-    name: 'Natalia'
-    email: 'natalia@mail.com'
-  },
-  {
-    name: 'Omit'
-    email: 'omit@mail.com'
-  },
-  {
-    name: 'Yana'
-    email: 'yana@mail.com'
-  },
-  {
-    name: 'Hema Gunti'
-    email: 'hema@mail.com'
-  },
-]
-*/
 
 
-/*****************************************************************
- Step 5: Write a method that can edit existing student information
-*************************************************************** */
 
-// Look at Sheila's classId has changed to '07'
+
+// modified student information 
 const studentInfo =  {
     'name': 'Sheila',
     'classId': '07',
     'email': 'sheila@mail.com',
     'telephone': '11110000'
 };
-hyf_students.editStudentInfo(studentInfo); // this method should modify student info
+hyf_students.editStudentInfo(studentInfo); // this method modify student info
 
-hyf_students.getStudentDetailByName('Sheila'); // to verify
-/** 
-Sample Result:
- {
-       'name': 'Sheila',
-       'classId': '07',
-       'email': 'sheilaqasemi @mail.com',
-       'telephone': '3333333'
-}
-*/
+console.log(hyf_students.getStudentDetailByName('Sheila')); // to verify
+
