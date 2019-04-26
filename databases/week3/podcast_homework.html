@@ -1,0 +1,70 @@
+<h1 id="homework">Homework</h1>
+<p>Create a database and node REST API for a website where users can upload and listen to podcasts.</p>
+<h2 id="design">Design</h2>
+<p>Overall you have a lot of freedom with this task. We only specify some minimum requirements but you can make it as simple or complex as you like.</p>
+<h3 id="minimum-requirements">Minimum Requirements</h3>
+<ol style="list-style-type: decimal">
+<li>There needs to be a MySQL database:
+<ul>
+<li>There has to be a <code>users</code> table with at least the fields <code>username</code> and <code>email</code>.</li>
+<li>There has to be a <code>podcasts</code> table with at least the fields <code>title</code> and <code>content</code>. The content is a dummy field since we don't want you to really upload audio.</li>
+<li>Every podcast entry has a user who created it.</li>
+</ul></li>
+<li><p>Create a node REST API. Please remember <a href="https://www.restapitutorial.com/lessons/httpmethods.html">this simple tutorial</a> for designing good endpoints. You need to create at least the following routes:</p>
+<table>
+<thead>
+<tr class="header">
+<th>HTTP Method</th>
+<th>Relative URL</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>GET</code></td>
+<td><code>/api/users</code></td>
+<td>Return an array of all usernames.</td>
+</tr>
+<tr class="even">
+<td><code>POST</code></td>
+<td><code>/api/users</code></td>
+<td>Create a new user.</td>
+</tr>
+<tr class="odd">
+<td><code>GET</code></td>
+<td><code>/api/users/:id</code></td>
+<td>Retrieve full user information.</td>
+</tr>
+<tr class="even">
+<td><code>PUT</code></td>
+<td><code>/api/users/:id</code></td>
+<td>Modify user information.</td>
+</tr>
+<tr class="odd">
+<td><code>DELETE</code></td>
+<td><code>/api/users/:id</code></td>
+<td>Delete a user.</td>
+</tr>
+<tr class="even">
+<td><code>GET</code></td>
+<td><code>/api/users/:id/podcasts</code></td>
+<td>List all podcasts of a user.</td>
+</tr>
+<tr class="odd">
+<td><code>POST</code></td>
+<td><code>/api/users/:id/podcasts</code></td>
+<td>Create a new podcast for the given user.</td>
+</tr>
+<tr class="even">
+<td><code>PUT</code></td>
+<td><code>/api/users/:id/podcasts/:podId</code></td>
+<td>Allow modifying the title of a podcast.</td>
+</tr>
+<tr class="odd">
+<td><code>DELETE</code></td>
+<td><code>/api/users/:id/podcasts/:podId</code></td>
+<td>Delete a user's podcast.</td>
+</tr>
+</tbody>
+</table></li>
+</ol>

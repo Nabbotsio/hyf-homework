@@ -1,0 +1,19 @@
+{
+  "name": "week3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app_podcast.js",
+
+  "dependencies": {
+  },
+  "devDependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app_podcast.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
