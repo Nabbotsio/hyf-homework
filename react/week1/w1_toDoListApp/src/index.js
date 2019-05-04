@@ -1,3 +1,4 @@
+
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -9,7 +10,7 @@ class List extends React.Component {
     return (
       <div>
         <p>
-          {description}, {date}{" "}
+          {description}, {date}
         </p>
       </div>
     );
