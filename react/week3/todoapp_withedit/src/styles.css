@@ -1,0 +1,32 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#pageHead {
+  background: rgb(194, 190, 190);
+  text-align: center;
+}
+
+#todocheck {
+  margin: 10px;
+}
+
+#deletButton,
+#editButton {
+  margin: 10px;
+}
+
+#taskInputDiv,
+#buttonsDiv {
+  text-align: center;
+}
+
+#todoText {
+  text-decoration: line-through;
+}
+
+#checkAll,
+#deletAll {
+  margin: 50px;
+}
