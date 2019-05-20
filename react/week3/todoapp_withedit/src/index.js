@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import "./styles.css";
 import List from "./list";
 import Todoinput from "./InputTodo";
+import Addbutton from "./addButton"
 
 class App extends Component {
   state = {
@@ -39,6 +40,14 @@ class App extends Component {
     this.setState({ todoArray: newTodoArray }, () =>
       console.log("added", this.state.todoArray)
     );
+  };
+
+  addButtonClik = (inputValue) => {
+
+      inputValue === ""
+        ? alert("Input field is empty, You must enter a Todo task")
+        : this.addTodoTask(inputValue);
+    
   };
 
   deletTodoTask = id => {
@@ -106,8 +115,12 @@ class App extends Component {
     return (
       <div>
         <h1 id="pageHead">Marcel's Todo List</h1>
-        <div>
-          <Todoinput addTodoTask={this.addTodoTask} />
+        <div id="inputDiv">
+          <Todoinput/>
+          <Addbutton 
+          addButtonClik={this.addButtonClik} 
+          addTodoTask={this.addTodoTask}
+          />
         </div>
         <div />
 
