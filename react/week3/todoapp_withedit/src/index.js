@@ -4,7 +4,6 @@ import ReactDOM from "react-dom";
 import "./styles.css";
 import List from "./list";
 import Todoinput from "./InputTodo";
-import Addbutton from "./addButton"
 
 class App extends Component {
   state = {
@@ -24,11 +23,9 @@ class App extends Component {
         description: "Eat breakfast",
         done: false
       }
-    ],
-    isEditButton: true
+    ]
   };
 
-  // function
   addTodoTask = todo => {
     const newTodoTask = {
       id: this.state.todoArray.length + 1,
@@ -37,26 +34,14 @@ class App extends Component {
     };
 
     const newTodoArray = this.state.todoArray.concat(newTodoTask);
-    this.setState({ todoArray: newTodoArray }, () =>
-      console.log("added", this.state.todoArray)
-    );
-  };
-
-  addButtonClik = (inputValue) => {
-
-      inputValue === ""
-        ? alert("Input field is empty, You must enter a Todo task")
-        : this.addTodoTask(inputValue);
-    
+    this.setState({ todoArray: newTodoArray });
   };
 
   deletTodoTask = id => {
     const filteredTodoArray = this.state.todoArray.filter(
       task => task.id !== id
     );
-    this.setState({ todoArray: filteredTodoArray }, () =>
-      console.log("filtered", this.state.todoArray)
-    );
+    this.setState({ todoArray: filteredTodoArray });
   };
 
   toggleTodoTask = id => {
@@ -66,9 +51,7 @@ class App extends Component {
         return task;
       } else return task;
     });
-    this.setState({ todoArray: newTodoArray }, () =>
-      console.log("check", this.state.todoArray)
-    );
+    this.setState({ todoArray: newTodoArray });
   };
 
   deletAllTodos = () => {
@@ -101,26 +84,15 @@ class App extends Component {
         return task;
       } else return task;
     });
-    this.setState({ todoArray: newTodoArray }, () =>
-      console.log("check", this.state.todoArray)
-    );
-  };
-
-  toggleEditButton = () => {
-    const newisEditButton = !this.state.isEditButton;
-    this.setState({ isEditButton: newisEditButton });
+    this.setState({ todoArray: newTodoArray });
   };
 
   render() {
     return (
       <div>
         <h1 id="pageHead">Marcel's Todo List</h1>
-        <div id="inputDiv">
-          <Todoinput/>
-          <Addbutton 
-          addButtonClik={this.addButtonClik} 
-          addTodoTask={this.addTodoTask}
-          />
+        <div>
+          <Todoinput addTodoTask={this.addTodoTask} />
         </div>
         <div />
 
